@@ -49,6 +49,7 @@
 $(function(){
 	$('#menu').tree({
 		onClick: function(node){
+			//这几行   选中叶子结点  添加一个标签页     如果有 不新增
 			if($('#menu').tree("isLeaf",node.target)){
 				var tabs = $("#tabs");
 				var tab = tabs.tabs("getTab",node.text);
