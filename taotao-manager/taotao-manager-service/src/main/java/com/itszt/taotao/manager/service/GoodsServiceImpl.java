@@ -15,12 +15,9 @@ import java.util.List;
 public class GoodsServiceImpl implements GoodsService {
     @Resource
     private GoodsDao goodsDao;
-    @Override
-    public List<TbItem> getAllGoods() {
-        List<TbItem> tbItems = goodsDao.queryAllItems();
-        return tbItems;
-    }
 
+
+    //分页显示商品数据   返回 easyUI bean
     @Override                                       //参数为 当前页  每页容量
     public EasyUIPageDatasBean<TbItem> getPageGoods(Integer pageNow, Integer pageCapacity) {
         //开始分页
