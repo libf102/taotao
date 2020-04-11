@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:45 +0800] "GET / HTTP/1.1" 200 2475 http-bio-8081-exec-1 2774
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:45 +0800] "GET / HTTP/1.1" 200 2475 http-bio-8081-exec-2 2778
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:46 +0800] "GET /css/taotao.css HTTP/1.1" 200 421 http-bio-8081-exec-6 63
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:46 +0800] "GET /js/jquery-easyui-1.4.1/themes/icon.css HTTP/1.1" 200 2430 http-bio-8081-exec-5 70
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:46 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8081-exec-9 12
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:46 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/tree_icons.png HTTP/1.1" 200 3115 http-bio-8081-exec-1 4
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:46 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/panel_tools.png HTTP/1.1" 200 852 http-bio-8081-exec-6 7
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:46 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/layout_arrows.png HTTP/1.1" 200 319 http-bio-8081-exec-4 3
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:46 +0800] "GET /js/jquery-easyui-1.4.1/themes/default/images/tabs_icons.png HTTP/1.1" 200 150 http-bio-8081-exec-8 5
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:50 +0800] "GET / HTTP/1.1" 200 2475 http-bio-8081-exec-10 3
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:40:50 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8081-exec-10 2
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:42:07 +0800] "GET /goods/getAllGoods.html HTTP/1.1" 406 1067 http-bio-8081-exec-3 1499
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:42:07 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8081-exec-3 4
+0:0:0:0:0:0:0:1 - - [10/Apr/2020:13:42:59 +0800] "GET /goods/getAllGoods HTTP/1.1" 200 914592 http-bio-8081-exec-4 604
