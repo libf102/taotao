@@ -21,7 +21,7 @@ public class GoodsController {
     @Resource
     private GoodsService goodsService;
 
-    //这个是跳转到 item-list
+    //动态跳转
     @RequestMapping("{path}")
     public String goToItemList(@PathVariable(name = "path") String path){
         return path;
