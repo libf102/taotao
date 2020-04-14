@@ -63,6 +63,7 @@
     <!--请求服务    id必须有-->
     <dubbo:reference id="goodsService" interface="com.itszt.taotao.manager.service.inter.GoodsService" protocol="dubbo" timeout="5000" ></dubbo:reference>
     <dubbo:reference id="itemCatService" interface="com.itszt.taotao.manager.service.inter.ItemCatService" protocol="dubbo" timeout="5000" ></dubbo:reference>
+    <dubbo:reference id="contentService" interface="com.itszt.taotao.manager.service.inter.ContentService" protocol="dubbo" timeout="5000" ></dubbo:reference>
 
     <bean id="fastDFSUtil" class="com.itszt.taotao.manager.controller.FastDFSUtil">
         <constructor-arg index="0" value="classpath:fdfs_client.properties"></constructor-arg>
