@@ -78,6 +78,7 @@ public class FastDFSUtil {
 	public static String local_filename = "C:\\Users\\1\\Desktop\\test1.jpg";
 	public static void main(String[] args) {
 		try {
+
 			FastDFSUtil fastDFSClient=new FastDFSUtil(conf_filename);
 			String path = fastDFSClient.uploadFile(local_filename, null,
 					null);

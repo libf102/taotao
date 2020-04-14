@@ -5,8 +5,8 @@ import java.util.List;
 
 public class EasyUIPageDatasBean<T> implements Serializable {
 
-    private long total;
-    private List<T> rows;
+    private long total;    //返回前端的 数据总条数
+    private List<T> rows;   //返回 当前页数据
 
     public long getTotal() {
         return total;

@@ -17,11 +17,11 @@
 传播行为
 https://segmentfault.com/a/1190000013341344
 -->
-    <!--事务管理者-->
-    <!--<bean id="id_txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-        <!--<property name="dataSource" ref="id_ds_c3p0"/>-->
-    <!--</bean>-->
-    <!--&lt;!&ndash;支持事务注解&ndash;&gt;-->
-    <!--<tx:annotation-driven transaction-manager="id_txManager"></tx:annotation-driven>-->
+<!--    事务管理者-->
+    <bean id="id_txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="id_ds_c3p0"/>
+    </bean>
+    <!--支持事务注解-->
+    <tx:annotation-driven transaction-manager="id_txManager"></tx:annotation-driven>
 
 </beans>
