@@ -10,6 +10,9 @@
 <meta name="description" content="淘淘JD.COM-专业的综合网上购物商城，在线销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品、在线旅游等数万个品牌千万种优质商品。便捷、诚信的服务，为您提供愉悦的网上商城购物体验! ">
 <meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,淘淘商城">
 <link href="/css/taotao.css" rel="stylesheet"/>
+	<script  type="text/javascript" src="/js/jquery-1.6.4.js">
+
+	</script>
 <script type="text/javascript">
 	window.pageConfig={
 	compatible:true,
@@ -376,5 +379,55 @@ pageConfig.DATA_Tabs = {"1615":{"1":{"d":"g15\/M00\/13\/1E\/rBEhWFJ4sNUIAAAAAAHJ
 <!-- footer end -->
  
 <script type="text/javascript" src="/js/home.js" charset="utf-8"></script>
+
 </body>
+<script type="text/javascript">
+    var pc=pageConfig;
+    $.ajax({
+        url: '/getBigADS.json',
+        type: 'POST', //GET
+        async: true,    //或false,是否异步
+        contentType:'application/json',//发送信息至服务器时内容编码类型。如果不删，data只能是json字符串，默认值x3w
+        data:{},
+        timeout: 5000,    //超时时间
+        dataType: 'json',//返回的数据类型，不指定则智能判断
+        success: function (data, textStatus, jqXHR) {
+
+            console.log("ajaxok",data);
+
+            (function(cfg, doc) {
+                if ( !cfg.DATA_MSlide ) {
+                    cfg.DATA_MSlide=[];
+                }
+                // var data = [{"srcB":"http://image.taotao.com/images/2015/03/03/2015030304360302109345.jpg","height":240,"alt":"","width":670,"src":"http://image.taotao.com/images/2015/03/03/2015030304360302109345.jpg","widthB":550,"href":"http://sale.jd.com/act/e0FMkuDhJz35CNt.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.taotao.com/images/2015/03/03/2015030304353109508500.jpg","height":240,"alt":"","width":670,"src":"http://image.taotao.com/images/2015/03/03/2015030304353109508500.jpg","widthB":550,"href":"http://sale.jd.com/act/UMJaAPD2VIXkZn.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.taotao.com/images/2015/03/03/2015030304345761102862.jpg","height":240,"alt":"","width":670,"src":"http://image.taotao.com/images/2015/03/03/2015030304345761102862.jpg","widthB":550,"href":"http://sale.jd.com/act/UMJaAPD2VIXkZn.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.taotao.com/images/2015/03/03/201503030434200950530.jpg","height":240,"alt":"","width":670,"src":"http://image.taotao.com/images/2015/03/03/201503030434200950530.jpg","widthB":550,"href":"http://sale.jd.com/act/kj2pmwMuYCrGsK3g.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.taotao.com/images/2015/03/03/2015030304333327002286.jpg","height":240,"alt":"","width":670,"src":"http://image.taotao.com/images/2015/03/03/2015030304333327002286.jpg","widthB":550,"href":"http://sale.jd.com/act/xcDvNbzAqK0CoG7I.html?cpdad=1DLSUE","heightB":240},{"srcB":"http://image.taotao.com/images/2015/03/03/2015030304324649807137.jpg","height":240,"alt":"","width":670,"src":"http://image.taotao.com/images/2015/03/03/2015030304324649807137.jpg","widthB":550,"href":"http://sale.jd.com/act/eDpBF1s8KcTOYM.html?cpdad=1DLSUE","heightB":240}];
+
+
+                cfg.DATA_MSlide = data;
+
+                // 初始化一个广告信息
+                if ( cfg.DATA_MSlide.length > 1 ) {
+                    var first = pageConfig.FN_GetCompatibleData( cfg.DATA_MSlide[0] );
+                    var TPL = ''
+                        +'<ul class="slide-items">'
+                        +'<li clstag="homepage|keycount|home2013|09a1">'
+                        +'<a href="'+ first.href +'" target="_blank" title="'+ first.alt +'">'
+                        +'<img src="'+ first.src +'" width="'+ first.width +'" height="'+ first.height +'" >'
+                        +'</a>'
+                        +'</li>'
+                        +'</ul><div class="slide-controls"><span class="curr">1</span></div>';
+                    $('#slide').html(TPL);
+
+                    $("#slide").Jslider({data: pageConfig.DATA_MSlide,auto: !0,reInit: !0,slideWidth: screen.width >= 1210 ? 670 : 550,slideHeight: 240,maxAmount: 6,slideDirection: 3,template: pageConfig.TPL_MSlide});
+                }
+            })(pc, document);;
+
+
+        },
+        error: function (xhr, textStatus) {
+            alert('AJAX失败');
+        }
+    });
+
+</script>
 </html>
+

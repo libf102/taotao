@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class ItemPicUtil {
 
-    public static final String FDFS_BASE_URL="http://192.168.177.131:8888";   //访问nginx的url
+    public static final String FDFS_BASE_URL="http://123.57.108.180:8888";   //访问nginx的url
 
     public static String genFullPath(String fdfsPath){
 

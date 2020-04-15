@@ -10,4 +10,6 @@ public interface ContentService {
     public List<EasyUITreeBean> getLeafNodes(String id);
 
     public boolean InsertContent(TbContent tbContent);
+
+    public List<TbContent> getContentByCategoryId();
 }

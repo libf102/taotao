@@ -15,7 +15,7 @@
           http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <context:component-scan base-package="com.itszt.taotao.portal.controller"></context:component-scan>
 <!--    <context:property-placeholder location="classpath:fdfs_client.properties"></context:property-placeholder>-->
-    <!--<context:property-placeholder location="classpath:fastdfs.properties"></context:property-placeholder>-->
+    <context:property-placeholder location="classpath:bigad.properties"></context:property-placeholder>
     <bean id="jsonconverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
 
     <mvc:annotation-driven>
@@ -55,14 +55,13 @@
     <!--定义了提供方应用信息，用于计算依赖关系；在 dubbo-admin 或 dubbo-monitor 会显示这个名字，方便辨识-->
     <dubbo:application name="taotao-manager-web" owner="sj" organization="itszt"/>
     <!--使用 zookeeper 注册中心暴露服务，注意要先开启 zookeeper-->
-    <dubbo:registry address="zookeeper://192.168.177.131:2181"/>
+    <dubbo:registry address="zookeeper://123.57.108.180:2181"/>
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="28081" />
     <!--使用 dubbo 协议实现定义好的 api.PermissionService 接口-->
     <!--<dubbo:service interface="com.itszt.order.OrderService" ref="orderServiceImpl" protocol="dubbo" />-->
     <!--请求服务    id必须有-->
-    <dubbo:reference id="goodsService" interface="com.itszt.taotao.manager.service.inter.GoodsService" protocol="dubbo" timeout="5000" ></dubbo:reference>
-    <dubbo:reference id="itemCatService" interface="com.itszt.taotao.manager.service.inter.ItemCatService" protocol="dubbo" timeout="5000" ></dubbo:reference>
+    <dubbo:reference id="contentService" interface="com.itszt.taotao.manager.service.inter.ContentService" protocol="dubbo" timeout="5000" ></dubbo:reference>
 
 <!--    <bean id="fastDFSUtil" class="com.itszt.taotao.manager.controller.FastDFSUtil">-->
 <!--        <constructor-arg index="0" value="classpath:fdfs_client.properties"></constructor-arg>-->

@@ -20,4 +20,7 @@ public interface ContentDao {
 
     @Insert("insert into tb_content values(NULL,#{categoryId},#{title},#{subTitle},#{titleDesc},#{url},#{pic},#{pic2},#{content},#{created},#{updated})")
     public void InsertContent(TbContent tbContent);
+
+    @Select("select * from tb_content where category_id=#{CategoryId}")
+    public List<TbContent> queryContentByCategoryId(String CategoryId);
 }
