@@ -43,7 +43,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     @Transactional
     public boolean addGoods(TbItem tbItem, String desc) {
-        tbItem.setStatus((byte)0);
+        tbItem.setStatus((int)0);
         tbItem.setCreated(new Date());
         tbItem.setUpdated(new Date());
         boolean b = goodsDao.insertTbItem(tbItem);

@@ -13,10 +13,12 @@
         <module>taotao-search</module>
         <module>taotao-common</module>
         <module>taotao-manager-pojo</module>
+
     </modules>
     <packaging>pom</packaging>
 
     <properties>
+        <Solrj.varsion>4.10.1</Solrj.varsion>
         <junit.version>4.12</junit.version>
         <spring.version>4.3.11.RELEASE</spring.version>
         <mybatis.version>3.2.8</mybatis.version>
@@ -69,6 +71,11 @@
                 <version>${log4j.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.solr</groupId>
+                <artifactId>solr-solrj</artifactId>
+                <version>${Solrj.varsion}</version>
+            </dependency>
 
 
             <dependency>

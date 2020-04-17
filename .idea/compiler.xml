@@ -7,13 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="taotao-manager-web" />
-        <module name="taotao-manager-inter" />
-        <module name="taotao-search" />
-        <module name="taotao-portal" />
+        <module name="search-inter" />
         <module name="taotao-manager-pojo" />
-        <module name="taotao-manager-dao" />
         <module name="taotao-common" />
+        <module name="taotao-portal" />
         <module name="taotao-manager-service" />
+        <module name="taotao-manager-dao" />
+        <module name="taotao-manager-inter" />
+        <module name="search-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

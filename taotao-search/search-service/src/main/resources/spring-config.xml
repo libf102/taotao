@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+         http://www.springframework.org/schema/task
+          http://www.springframework.org/schema/task/spring-task.xsd
+          http://code.alibabatech.com/schema/dubbo
+           http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+     <!--  为了让SpringIoC可以基于注解来做，注解支持-->
+     <context:annotation-config/>
+
+     <!--指明注解的扫描包，即将来去哪个包里找注解
+     SpringIoC只管扫描service和dao即可
+     -->
+     <context:component-scan base-package="com.itszt.taotao.search.dao,com.itszt.taotao.search.service">
+     </context:component-scan>
+
+     <context:property-placeholder location="classpath:solr.properties"></context:property-placeholder>
+
+
+
+     <!--定义solr的server-->
+     <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+          <constructor-arg index="0" value="${solr.Url}"/>
+          <!-- 设置响应解析器 -->
+          <property name="parser">
+               <bean class="org.apache.solr.client.solrj.impl.XMLResponseParser"/>
+          </property>
+          <!-- 设置重试次数-->
+          <property name="maxRetries" value="${solr.maxRetries}"/>
+          <!-- 建立连接的最长时间 -->
+          <property name="connectionTimeout" value="${solr.connectionTimeout}"/>
+     </bean>
+
+
+</beans>
