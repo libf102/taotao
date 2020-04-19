@@ -1,15 +1,19 @@
 package com.itszt.taotao.manager.service;
 
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.itszt.taotao.easyui.bean.EasyUIPageDatasBean;
+import com.itszt.taotao.easyui.bean.GoodsMsg;
 import com.itszt.taotao.manager.dao.GoodsDao;
 import com.itszt.taotao.manager.service.inter.GoodsService;
 import com.itszt.taotao.pojo.TbItem;
 import com.itszt.taotao.pojo.TbItemDesc;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -43,18 +47,19 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     @Transactional
     public boolean addGoods(TbItem tbItem, String desc) {
-        tbItem.setStatus((int)0);
+        tbItem.setStatus(0);
         tbItem.setCreated(new Date());
         tbItem.setUpdated(new Date());
         boolean b = goodsDao.insertTbItem(tbItem);
 
-        TbItemDesc tbItemDesc = new TbItemDesc();
+        TbItemDesc tbItemDesc = new TbItemDesc(); //订单描述对象
 
         tbItemDesc.setItemId(tbItem.getId());
         tbItemDesc.setCreated(new Date());
         tbItemDesc.setUpdated(new Date());
         tbItemDesc.setItemDesc(desc);
         boolean b1 = goodsDao.insertTbItemDesc(tbItemDesc);
+
 
         return true;
     }

@@ -7,6 +7,9 @@
     <file type="web" url="file://$PROJECT_DIR$/taotao-portal" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-search" />
   </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

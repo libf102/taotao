@@ -13,6 +13,8 @@
     <packaging>war</packaging>
 
     <dependencies>
+
+
         <dependency>
             <groupId>com.itszt.taotao</groupId>
             <artifactId>taotao-manager-inter</artifactId>

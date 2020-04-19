@@ -1,7 +1,7 @@
 package com.itszt.taotao.search.dao;
 
 import com.itszt.taotao.pojo.TbItem;
-import com.itszt.taotao.search.inter.SearchVO;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.util.LimitedInputStream;
 import org.apache.commons.lang3.math.NumberUtils;

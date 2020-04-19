@@ -23,12 +23,13 @@
      </context:component-scan>
 
      <!--  引入外部的一个配置文件，这个文件里放的全都是C3P0数据源连接池的配置-->
-     <context:property-placeholder location="classpath*:c3p0-config.properties,
+     <context:property-placeholder location="classpath:c3p0-config.properties,
      classpath:redis.properties" ></context:property-placeholder>
 
      <import resource="classpath:spring-mybatis-config.xml"></import>
      <import resource="classpath:spring-redis-config.xml"></import>
      <import resource="classpath:spring-aop-config.xml"></import>
+
 
 
      <!--定义了提供方应用信息，用于计算依赖关系；在 dubbo-admin 或 dubbo-monitor 会显示这个名字，方便辨识-->

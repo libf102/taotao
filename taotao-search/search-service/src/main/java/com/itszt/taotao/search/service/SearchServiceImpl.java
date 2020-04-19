@@ -63,7 +63,7 @@ public class SearchServiceImpl implements SearchService {
             List<TbItem> tbItems = searchDTO.getTbItems();
             Map<String, Map<String, List<String>>> highlighting = searchDTO.getHighlighting();
             for (TbItem tbItem : tbItems) {
-                tbItem.setImage(ItemPicUtil.genFullPath(tbItem.getImage()));
+                tbItem.setImage(ItemPicUtil.genFullPath(tbItem.getImage().split(",")[0]));
                 Map<String, List<String>> stringListMap = highlighting.get(String.valueOf(tbItem.getId()));
                 if (stringListMap==null) {
                     continue;
