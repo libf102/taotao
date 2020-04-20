@@ -2,6 +2,7 @@ package com.itszt.taotao.manager.service.inter;
 
 import com.itszt.taotao.easyui.bean.EasyUIPageDatasBean;
 import com.itszt.taotao.pojo.TbItem;
+import com.itszt.taotao.pojo.TbItemDesc;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.util.List;
@@ -14,4 +15,7 @@ public interface GoodsService {
 
     //添加商品数据
     public boolean addGoods(TbItem tbItem,String desc);
+
+    public TbItem getTbItemById(long goodsId);
+    public TbItemDesc getTbItemDescById(long goodsId);
 }

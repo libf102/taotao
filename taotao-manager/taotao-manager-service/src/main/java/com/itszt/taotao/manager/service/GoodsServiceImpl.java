@@ -11,6 +11,7 @@ import com.itszt.taotao.manager.service.inter.GoodsService;
 import com.itszt.taotao.pojo.TbItem;
 import com.itszt.taotao.pojo.TbItemDesc;
 
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,6 +23,8 @@ import java.util.List;
 public class GoodsServiceImpl implements GoodsService {
     @Resource
     private GoodsDao goodsDao;
+    @Resource
+    private KafkaTemplate kafkaTemplate;
 
 
     //分页显示商品数据   返回 easyUI bean
@@ -60,7 +63,26 @@ public class GoodsServiceImpl implements GoodsService {
         tbItemDesc.setItemDesc(desc);
         boolean b1 = goodsDao.insertTbItemDesc(tbItemDesc);
 
+        GoodsMsg goodsMsg = new GoodsMsg();
+        goodsMsg.setOpt("add");
+        goodsMsg.setTbItemNew(tbItem);
+        kafkaTemplate.send("TbItemTopic", JSON.toJSONString(goodsMsg));
 
         return true;
     }
+
+    @Override
+    public TbItem getTbItemById(long goodsId) {
+        TbItem tbItem = goodsDao.queryTbItem(goodsId);
+
+        return tbItem;
+    }
+
+    @Override
+    public TbItemDesc getTbItemDescById(long goodsId) {
+        TbItemDesc tbItemDesc = goodsDao.queryTbItemDesc(goodsId);
+        return tbItemDesc;
+    }
+
+
 }

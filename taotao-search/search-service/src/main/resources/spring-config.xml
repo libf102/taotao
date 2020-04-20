@@ -22,9 +22,9 @@
      <context:component-scan base-package="com.itszt.taotao.search.dao,com.itszt.taotao.search.service">
      </context:component-scan>
 
-     <context:property-placeholder location="classpath:solr.properties"></context:property-placeholder>
+     <context:property-placeholder location="classpath:solr.properties,classpath:kafka.properties"></context:property-placeholder>
 
-
+     <import resource="classpath:kafka-consumer.xml"></import>
 
      <!--定义solr的server-->
      <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">

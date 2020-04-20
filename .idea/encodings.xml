@@ -2,11 +2,13 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/taotao-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/taotao-detail/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taotao-manager-pojo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-dao/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-inter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taotao-manager/taotao-manager-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/taotao-pay/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taotao-portal/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taotao-search/search-inter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/taotao-search/search-service/src/main/resources" charset="UTF-8" />

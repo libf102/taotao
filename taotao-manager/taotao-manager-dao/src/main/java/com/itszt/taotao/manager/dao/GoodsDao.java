@@ -22,4 +22,9 @@ public interface GoodsDao {
 
     @Insert("insert into tb_item_desc values(#{itemId},#{itemDesc},#{created},#{updated})")
     public boolean insertTbItemDesc(TbItemDesc tbItemDesc);
+
+    @Select("select * from tb_item where id=#{goodsId}")
+    public  TbItem queryTbItem(long goodsId);
+    @Select("select * from tb_item_desc where item_id=#{goodsId}")
+    public TbItemDesc queryTbItemDesc(long goodsId);
 }

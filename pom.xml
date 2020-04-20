@@ -13,6 +13,8 @@
         <module>taotao-search</module>
         <module>taotao-common</module>
         <module>taotao-manager-pojo</module>
+        <module>taotao-detail</module>
+        <module>taotao-pay</module>
 
     </modules>
     <packaging>pom</packaging>
@@ -59,10 +61,23 @@
         <fdfs.verison>1.29-SNAPSHOT</fdfs.verison>
         <rocketmq-client.version>4.2.0</rocketmq-client.version>
         <log4j.version>1.2.17</log4j.version>
+        <spring-kafka.verison>2.1.4.RELEASE</spring-kafka.verison>
+        <kafka.verison>1.0.0</kafka.verison>
     </properties>
     <dependencyManagement>
 
         <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.verison}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${kafka.verison}</version>
+            </dependency>
 
             <!-- https://mvnrepository.com/artifact/log4j/log4j -->
             <dependency>
