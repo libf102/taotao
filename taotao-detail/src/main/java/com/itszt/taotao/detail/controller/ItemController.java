@@ -4,18 +4,16 @@ import com.itszt.taotao.easyui.bean.ItemPicUtil;
 import com.itszt.taotao.manager.service.inter.GoodsService;
 import com.itszt.taotao.pojo.TbItem;
 import com.itszt.taotao.pojo.TbItemDesc;
-import org.apache.http.HttpResponse;
+import com.itszt.taotao.shopcar.inter.ShopcarService;
+
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +24,12 @@ public class ItemController {
     private GoodsService goodsService;
     @Resource
     private FreemarkerCacheUtil freemarkerCacheUtil;
+    @Resource
+    private ShopcarService shopcarService;
 
     @RequestMapping("/item/{id}")
     public void showItemDetail(@PathVariable(name="id") long goodsId , Model model, HttpServletResponse response){
+
 //        TbItem tbItem = goodsService.getTbItemById(goodsId);
 //        List<String> images = new ArrayList<>();
 //        String[] split = tbItem.getImage().split(",");
@@ -64,6 +65,23 @@ public class ItemController {
             e.printStackTrace();
         }
 
+
+    }
+
+
+    @RequestMapping("/cart/add/{itemId}")
+    public AddShopCarResult itemAddShopCar(@PathVariable(name = "itemId")String itemId){
+        Long itemid = NumberUtils.createLong(itemId.replace(",", ""));
+        AddShopCarResult addShopCarResult = new AddShopCarResult();
+        long userId = 123456789;
+        boolean b = shopcarService.itemAddShopcar(itemid, userId);
+        addShopCarResult.setSuccess(b);
+        if (b) {
+            addShopCarResult.setResultInfo("添加购物车成功");
+        }else{
+            addShopCarResult.setResultInfo("添加购物车失败");
+        }
+        return  addShopCarResult;
 
     }
 }

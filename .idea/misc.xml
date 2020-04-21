@@ -8,6 +8,8 @@
     <file type="web" url="file://$PROJECT_DIR$/taotao-pay" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-portal" />
     <file type="web" url="file://$PROJECT_DIR$/taotao-search" />
+    <file type="web" url="file://$PROJECT_DIR$/taotao-shopcar/shopcar-service" />
+    <file type="web" url="file://$PROJECT_DIR$/taotao-showcar/taotao-showcar-service" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -22,6 +24,9 @@
       <set>
         <option value="$PROJECT_DIR$/search-service/pom.xml" />
         <option value="$PROJECT_DIR$/taotao-pojo/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-showcar-service/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-showcar/taotao-showcar-inter/pom.xml" />
+        <option value="$PROJECT_DIR$/taotao-showcar/taotao-showcar-service/pom.xml" />
       </set>
     </option>
   </component>

@@ -6,21 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="taotao-manager-dao" />
         <module name="taotao-manager-web" />
         <module name="search-inter" />
-        <module name="taotao-common" />
+        <module name="taotao-manager-pojo" />
+        <module name="taotao-manager-inter" />
         <module name="search-service" />
         <module name="taotao-portal" />
-        <module name="taotao-pay" />
-        <module name="taotao-manager-pojo" />
-        <module name="taotao-manager-dao" />
-        <module name="taotao-detail" />
-        <module name="taotao-manager-inter" />
         <module name="taotao-manager-service" />
+        <module name="taotao-pay" />
+        <module name="taotao-detail" />
+        <module name="taotao-common" />
+        <module name="shopcar-service" />
+        <module name="shopcar-inter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="taotao-pojo" target="1.8" />
+      <module name="taotao-showcar-inter" target="1.8" />
+      <module name="taotao-showcar-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
