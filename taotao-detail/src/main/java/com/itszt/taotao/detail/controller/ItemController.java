@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -69,9 +70,12 @@ public class ItemController {
     }
 
 
-    @RequestMapping("/cart/add/{itemId}")
+    @RequestMapping("/cart/add/{itemId}.json")
+    @ResponseBody                                                   //
     public AddShopCarResult itemAddShopCar(@PathVariable(name = "itemId")String itemId){
+        System.out.println(itemId);
         Long itemid = NumberUtils.createLong(itemId.replace(",", ""));
+        System.out.println(itemid);
         AddShopCarResult addShopCarResult = new AddShopCarResult();
         long userId = 123456789;
         boolean b = shopcarService.itemAddShopcar(itemid, userId);

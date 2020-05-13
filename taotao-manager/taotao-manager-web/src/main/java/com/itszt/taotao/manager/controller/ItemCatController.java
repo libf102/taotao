@@ -20,9 +20,9 @@ public class ItemCatController {
     public List<EasyUITreeBean> getTreeNodes(String id){
         List<EasyUITreeBean> nodes=null;
         if (StringUtils.isEmpty(id)) {
-            nodes = itemCatService.getTopNodes();
+            nodes = itemCatService.getTopNodes();  //id为空 第一次提交  查询所有的 顶层 节点  (parent_id为o)
         }else {
-            nodes= itemCatService.getLeafNodes(id);
+            nodes= itemCatService.getLeafNodes(id);  //根据提交的id 查父节点为这个id 的 所有节点
         }
 
         return nodes;

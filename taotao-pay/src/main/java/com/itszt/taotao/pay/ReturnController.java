@@ -44,7 +44,7 @@ public class ReturnController {
 
             //付款金额
             String total_amount = new String(request.getParameter("total_amount").getBytes("ISO-8859-1"),"UTF-8");
-
+            String a ="付款成功";
             Enumeration<String> parameterNames = request.getParameterNames();
             while (parameterNames.hasMoreElements()) {
                 String key = parameterNames.nextElement();
@@ -52,7 +52,7 @@ public class ReturnController {
 
             }
 
-            out.println("trade_no:"+trade_no+"<br/>out_trade_no:"+out_trade_no+"<br/>total_amount:"+total_amount);
+            out.println("trade_no:"+trade_no+"<br/>out_trade_no:"+out_trade_no+"<br/>total_amount:"+total_amount+a);
 
         }else {
             out.println("验签失败");

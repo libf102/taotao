@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class MyConsumer implements MessageListener<String,String> {
     @Resource
-    private ShopcarDao shopCarDao;
+    private ShopcarDao shopcarDao;
     @Resource
     private GoodsService goodsService;
     @Override
@@ -26,17 +26,17 @@ public class MyConsumer implements MessageListener<String,String> {
 
         JSONObject jsonObject = JSON.parseObject(value);
 
-        Long userid = NumberUtils.createLong(jsonObject.get("userid")+"");
-        Long itemId = NumberUtils.createLong(jsonObject.get("itemId")+"");
+        Long userId = NumberUtils.createLong(jsonObject.get("userId").toString());
+        Long itemId = NumberUtils.createLong(jsonObject.get("itemId").toString());
 
-        TbShopcar tbShopcar = shopCarDao.queryShopCarItem(itemId,userid );
+        TbShopcar tbShopcar = shopcarDao.queryShopCarItem(itemId,userId);
         if (tbShopcar==null) {
             //之前购物未添加过该商品
             tbShopcar=new TbShopcar();
 
             tbShopcar.setAddDate(new Date());
             tbShopcar.setItemId(itemId);
-            tbShopcar.setUserId((int)(long)userid);
+            tbShopcar.setUserId((int)(long)userId);
             tbShopcar.setNum(1);
             tbShopcar.setTag(System.currentTimeMillis());
 
@@ -47,6 +47,8 @@ public class MyConsumer implements MessageListener<String,String> {
             tbShopcar.setTotalPrice(price);
             tbShopcar.setItemTitle(tbItem.getTitle());
 
+            shopcarDao.insertShopCarItem(tbShopcar);
+
         }else {
             //添加过
             Integer oldNum = tbShopcar.getNum();
@@ -54,7 +56,7 @@ public class MyConsumer implements MessageListener<String,String> {
 
             Integer totalPrice=tbShopcar.getPrice()*newNum;
 
-            shopCarDao.updateShopCarItem(tbShopcar.getId(), newNum,System.currentTimeMillis(),totalPrice );
+            shopcarDao.updateShopCarItem(tbShopcar.getId(), newNum,System.currentTimeMillis(),totalPrice );
 
         }
 

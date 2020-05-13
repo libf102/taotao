@@ -68,6 +68,7 @@ public class GoodsServiceImpl implements GoodsService {
         goodsMsg.setTbItemNew(tbItem);
         kafkaTemplate.send("TbItemTopic", JSON.toJSONString(goodsMsg));
 
+
         return true;
     }
 

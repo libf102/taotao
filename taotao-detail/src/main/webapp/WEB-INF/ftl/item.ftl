@@ -26,7 +26,7 @@
                     },
 
                     error: function (e) {
-                        alert('AJAX失败！');
+                        alert('AJAX失败！'+data.resultInfo);
 
                     }
             })

@@ -56,10 +56,14 @@ public class GoodsController {
     @ResponseBody     //{"error":0/1,"url":"xxxxxx","message":"xxxxxx"}
     public EasyUIPicUploadBean uploadPic(MultipartFile uploadFile){
         String[] split = uploadFile.getOriginalFilename().split("\\.");
-        String extName=split[1];
+        String extName=split[1];   //后缀名
         EasyUIPicUploadBean easyUIPicUploadBean = new EasyUIPicUploadBean();
         try {
             String s = fastDFSUtil.uploadFile(uploadFile.getBytes(), extName, null);
+            //参数
+            //fileContent 文件的内容，字节数组
+            //extName 文件扩展名
+            //metas 文件扩展信息
             String path =nginx_server+s;
             //String s1 = ItemPicUtil.genFullPath(s);
             logger.debug(path);

@@ -81,9 +81,9 @@ public class PayController {
         AlipayTradeRefundRequest alipayRequest = new AlipayTradeRefundRequest();
 
         //商户订单号，商户网站订单系统中唯一订单号
-        String out_trade_no = new String("111112004201833138611");
+        String out_trade_no = new String("111112004221022498611");
         //支付宝交易号
-        String trade_no = new String("2020042022001456921447123653");
+        String trade_no = new String("2020042222001456921447883740");
         //请二选一设置
         //需要退款的金额，该金额不能大于订单金额，必填
         String refund_amount = new String("0.01");
@@ -100,7 +100,7 @@ public class PayController {
 
         //请求
         String result = alipayClient.execute(alipayRequest).getBody();
-
+        //响应的的就是json   可以获取键值 返给指定页面
         //输出
 
         response.setContentType("text/html;charset=utf-8");

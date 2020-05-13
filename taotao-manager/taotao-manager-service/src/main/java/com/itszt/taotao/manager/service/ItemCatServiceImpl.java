@@ -36,7 +36,7 @@ public class ItemCatServiceImpl implements ItemCatService {
             easyUITreeBeans.add(treeBean);
             treeBean.setId(tbItemCat.getId());
             treeBean.setText(tbItemCat.getName());
-            if (!tbItemCat.getIsParent()) {
+            if (!tbItemCat.getIsParent()) {   //判断 如果isparent 为 0  没有子节点  设置status为 open
                 treeBean.setState(EasyUITreeBean.STATE_OPEN);
             }
         }
