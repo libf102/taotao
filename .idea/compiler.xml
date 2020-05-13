@@ -9,15 +9,15 @@
         <module name="taotao-manager-dao" />
         <module name="taotao-manager-web" />
         <module name="search-inter" />
+        <module name="taotao-manager-service" />
+        <module name="shopcar-service" />
+        <module name="taotao-portal" />
+        <module name="taotao-pay" />
         <module name="taotao-manager-pojo" />
         <module name="taotao-manager-inter" />
-        <module name="search-service" />
-        <module name="taotao-portal" />
-        <module name="taotao-manager-service" />
-        <module name="taotao-pay" />
         <module name="taotao-detail" />
         <module name="taotao-common" />
-        <module name="shopcar-service" />
+        <module name="search-service" />
         <module name="shopcar-inter" />
       </profile>
     </annotationProcessing>
