@@ -25,7 +25,7 @@
         <Solrj.varsion>4.10.1</Solrj.varsion>
         <junit.version>4.12</junit.version>
         <spring.version>4.3.11.RELEASE</spring.version>
-        <mybatis.version>3.2.8</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
 <!--        mybatis的分页-->
         <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
