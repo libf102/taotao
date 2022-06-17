@@ -57,7 +57,7 @@
         <freemarker.version>2.3.28</freemarker.version>
 <!--        定时执行任务-->
         <quartz.version>2.2.2</quartz.version>
-        <fastjson.version>1.2.47</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
 <!--        连接文件服务器-->
 <!--        <fdfs.verison>1.25.3</fdfs.verison>-->
         <fdfs.verison>1.29-SNAPSHOT</fdfs.verison>
